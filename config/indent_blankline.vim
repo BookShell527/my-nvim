@@ -6,6 +6,7 @@ require("indent_blankline").setup({
     "terminal",
     "dashboard",
     "packer",
+		"lsp-installer",
     "lspinfo",
     "TelescopePrompt",
     "TelescopeResults",

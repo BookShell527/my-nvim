@@ -1,51 +1,58 @@
 " Nvim color
-autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
-autocmd vimenter * hi EndOfBuffer guibg=NONE ctermbg=NONE
-autocmd vimenter * hi SignColumn guibg=NONE ctermbg=NONE
-autocmd vimenter * hi VertSplit guifg=fg guibg=bg
+au VimEnter * hi Normal guibg=NONE ctermbg=NONE
+au VimEnter * hi EndOfBuffer guibg=NONE ctermbg=NONE
+au VimEnter * hi SignColumn guibg=NONE ctermbg=NONE
+au VimEnter * hi VertSplit guifg=fg guibg=bg
 
 " Indent color
-autocmd vimenter * hi IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine
-autocmd vimenter * hi IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine
-autocmd vimenter * hi IndentBlanklineIndent3 guifg=#98C379 gui=nocombine
-autocmd vimenter * hi IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine
-autocmd vimenter * hi IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine
-autocmd vimenter * hi IndentBlanklineIndent6 guifg=#C678DD gui=nocombine
+au VimEnter * hi IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine
+au VimEnter * hi IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine
+au VimEnter * hi IndentBlanklineIndent3 guifg=#98C379 gui=nocombine
+au VimEnter * hi IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine
+au VimEnter * hi IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine
+au VimEnter * hi IndentBlanklineIndent6 guifg=#C678DD gui=nocombine
 
 " Bufferline color
-autocmd vimenter * hi BufferLineFill guibg=NONE
-autocmd vimenter * hi BufferLineTab guibg=NONE guifg=fg
-autocmd vimenter * hi BufferLineErrorDiagnostic guibg=NONE
-autocmd vimenter * hi BufferLineDiagnostic guibg=NONE
-autocmd vimenter * hi BufferLineInfo guibg=NONE guifg=fg
-autocmd vimenter * hi BufferLineError guibg=NONE guifg=fg
-autocmd vimenter * hi BufferLineBuffer guibg=NONE
-autocmd vimenter * hi BufferLineTabClose guibg=NONE
-autocmd vimenter * hi BufferLineCloseButton guibg=NONE
-autocmd vimenter * hi BufferLineBackground guibg=NONE guifg=fg
-autocmd vimenter * hi BufferLineSeparator guibg=NONE
-autocmd vimenter * hi BufferLineModified guibg=NONE
+au VimEnter * hi BufferLineFill guibg=NONE
+au VimEnter * hi BufferLineTab guibg=NONE guifg=fg
+au VimEnter * hi BufferLineErrorDiagnostic guibg=NONE
+au VimEnter * hi BufferLineDiagnostic guibg=NONE
+au VimEnter * hi BufferLineInfo guibg=NONE guifg=fg
+au VimEnter * hi BufferLineWarning guibg=NONE guifg=fg
+au VimEnter * hi BufferLineWarningDiagnostic guibg=NONE guifg=fg
+au VimEnter * hi BufferLineInfoDiagnostic guibg=NONE guifg=fg
+au VimEnter * hi BufferLineError guibg=NONE guifg=fg
+au VimEnter * hi BufferLineHint guibg=NONE guifg=fg
+au VimEnter * hi BufferLineHintDiagnostic guibg=NONE guifg=fg
+au VimEnter * hi BufferLineDuplicate guibg=NONE guifg=fg
+au VimEnter * hi BufferLineBuffer guibg=NONE
+au VimEnter * hi BufferLineTabClose guibg=NONE
+au VimEnter * hi BufferLineCloseButton guibg=NONE
+au VimEnter * hi BufferLineBackground guibg=NONE guifg=fg
+au VimEnter * hi BufferLineSeparator guibg=NONE
+au VimEnter * hi BufferLineModified guibg=NONE
 
 " Lsp color
-autocmd vimenter * hi DiagnosticVirtualTextError guifg=#E06C75 guibg=NONE
-autocmd vimenter * hi DiagnosticVirtualTextWarn guifg=#E5C07B guibg=NONE
-autocmd vimenter * hi DiagnosticVirtualTextHint guifg=#98C379 guibg=NONE
-autocmd vimenter * hi DiagnosticVirtualTextInfo guifg=#C678DD guibg=NONE
-autocmd vimenter * hi LspDiagnosticVirtualTextError guifg=#E06C75 guibg=NONE
-autocmd vimenter * hi LspDiagnosticVirtualTextWarn guifg=#E5C07B guibg=NONE
-autocmd vimenter * hi LspDiagnosticVirtualTextHint guifg=#98C379 guibg=NONE
-autocmd vimenter * hi LspDiagnosticVirtualTextInfo guifg=#C678DD guibg=NONE
+au VimEnter * hi DiagnosticVirtualTextError guifg=#E06C75 guibg=NONE
+au VimEnter * hi DiagnosticVirtualTextWarn guifg=#E5C07B guibg=NONE
+au VimEnter * hi DiagnosticVirtualTextHint guifg=#98C379 guibg=NONE
+au VimEnter * hi DiagnosticVirtualTextInfo guifg=#C678DD guibg=NONE
+au VimEnter * hi LspDiagnosticVirtualTextError guifg=#E06C75 guibg=NONE
+au VimEnter * hi LspDiagnosticVirtualTextWarn guifg=#E5C07B guibg=NONE
+au VimEnter * hi LspDiagnosticVirtualTextHint guifg=#98C379 guibg=NONE
+au VimEnter * hi LspDiagnosticVirtualTextInfo guifg=#C678DD guibg=NONE
+au VimEnter * hi FlutterNotificationNormal guibg=NONE
 
 " Nvim tree color
-autocmd vimenter * hi NvimTreeNormal guibg=NONE gui=nocombine
-autocmd vimenter * hi NvimTreeEndOfBuffer guibg=NONE gui=nocombine
-autocmd vimenter * hi NvimTreeVertSplit guifg=fg guibg=NONE gui=NONE
-autocmd FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
-autocmd FileType NvimTree setlocal winhighlight=EndOfBuffer:NvimTreeEndOfBuffer
-autocmd FileType NvimTree setlocal winhighlight=VertSplit:NvimTreeVertSplit
+au VimEnter * hi NvimTreeNormal guibg=NONE gui=nocombine
+au VimEnter * hi NvimTreeEndOfBuffer guibg=NONE gui=nocombine
+au VimEnter * hi NvimTreeVertSplit guifg=fg guibg=NONE gui=NONE
+au FileType NvimTree setlocal winhighlight=Normal:NvimTreeNormal
+au FileType NvimTree setlocal winhighlight=EndOfBuffer:NvimTreeEndOfBuffer
+au FileType NvimTree setlocal winhighlight=VertSplit:NvimTreeVertSplit
 
 " Completion color
-autocmd vimenter * hi PMenu guibg=#282c34 guifg=fg
-autocmd vimenter * hi CmpItemKindDefault guifg=#61afef
+au VimEnter * hi PMenu guibg=#282c34 guifg=fg
+au VimEnter * hi CmpItemKindDefault guifg=#61afef
 
 colorscheme onedark
