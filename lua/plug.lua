@@ -1,4 +1,6 @@
-call plug#begin('~/.vim/plugged')
+local Plug = vim.fn['plug#']
+
+vim.call('plug#begin', '~/.vim/plugged')
 
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -16,7 +18,7 @@ Plug 'cohama/lexima.vim'
 Plug 'mattn/emmet-vim'
 Plug 'akinsho/flutter-tools.nvim'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
@@ -30,23 +32,4 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind-nvim'
 
-call plug#end()
-
-" Plugin configuration
-runtime ./config/treesitter.vim
-runtime ./config/indent_blankline.vim
-runtime ./config/nvimtree.vim
-runtime ./config/colorizer.vim
-runtime ./config/lualine.vim
-runtime ./config/lsp.vim
-runtime ./config/bufferline.vim
-runtime ./config/telescope.vim
-runtime ./config/completion.vim
-
-lua << EOF
-
-vim.opt.fillchars:append { eob = " " }
-require("telescope").setup()
-require("gitsigns").setup()
-
-EOF
+vim.call('plug#end')

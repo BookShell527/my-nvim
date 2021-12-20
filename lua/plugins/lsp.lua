@@ -1,12 +1,6 @@
-lua << EOF
-
 local lspconfig = require("lspconfig")
 
 local on_attach = function(client, bufnr)
-	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-	local opts = { noremap = true, silent = true }
 	if client.resolved_capabilities.document_formatting then 
 		vim.api.nvim_command [[augroup Format]]
 		vim.api.nvim_command [[autocmd! * <buffer> ]]
@@ -18,33 +12,32 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { 
-	"html", 
-	"cssls", 
-	"pyright", 
-	"vimls", 
+local servers = {
+	"html",
+	"cssls",
+	"pyright",
+	"vimls",
 	"tsserver",
-	"sumneko_lua", 
-	"svelte", 
+	"sumneko_lua",
+	"svelte",
 	"rust_analyzer",
-	"vuels", 
-	"texlab", 
+	"vuels",
+	"texlab",
 	"yamlls",
 	"vls",
 	"gopls",
 }
 
 for _, i in ipairs(servers) do
-  lspconfig[i].setup {
-    on_attach = on_attach,
-		capabilities = capabilities,
-  }
+  lspconfig[i].setup { on_attach = on_attach, capabilities = capabilities }
 end
 
 require("flutter-tools").setup({
-	lsp = {
-		on_attach = on_attach,
-	}
+	lsp = { on_attach = on_attach }
 })
 
-EOF
+-- Treesitter Configuration
+require("nvim-treesitter.configs").setup({
+  ensure_installed = { "lua", "vim" },
+  highlight = { enable = true, use_languagetree = true },
+})
