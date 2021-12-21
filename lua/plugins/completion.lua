@@ -28,7 +28,7 @@ lspkind.init {
     EnumMember = "",
     Constant = "",
     Struct = "",
-  },
+  }
 }
 
 cmp.setup({

@@ -1,11 +1,12 @@
 local lspconfig = require("lspconfig")
+local cmd = vim.api.nvim_command
 
-local on_attach = function(client, bufnr)
-	if client.resolved_capabilities.document_formatting then 
-		vim.api.nvim_command [[augroup Format]]
-		vim.api.nvim_command [[autocmd! * <buffer> ]]
-		vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 100) ]]
-		vim.api.nvim_command [[augroup END]]
+local on_attach = function(client, _)
+	if client.resolved_capabilities.document_formatting then
+		cmd [[augroup Format]]
+		cmd [[autocmd! * <buffer> ]]
+		cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 100) ]]
+		cmd [[augroup END]]
 	end
 end
 
@@ -24,7 +25,6 @@ local servers = {
 	"vuels",
 	"texlab",
 	"yamlls",
-	"vls",
 	"gopls",
 }
 
@@ -34,10 +34,4 @@ end
 
 require("flutter-tools").setup({
 	lsp = { on_attach = on_attach }
-})
-
--- Treesitter Configuration
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "lua", "vim" },
-  highlight = { enable = true, use_languagetree = true },
 })
