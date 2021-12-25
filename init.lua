@@ -1,5 +1,5 @@
 require("options")
 require("pack")
-require("plugins")
+require("plugins.lsp")
 require("mappings")
 require("color")

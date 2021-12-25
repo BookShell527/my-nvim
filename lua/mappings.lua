@@ -1,48 +1,47 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local m = vim.api.nvim_set_keymap
+local opt = { noremap = true, silent = true }
 
 -- Tabs Navigation
-map('n', '<C-w>', ':BDelete this<CR>', opts)
-map('n', 'L', ':BufferLineMoveNext<Cr>', opts)
-map('n', 'H', ':BufferLineMovePrev<Cr>', opts)
-map('n', 'K', ':BufferLineCycleNext<Cr>', opts)
-map('n', 'J', ':BufferLineCyclePrev<Cr>', opts)
+m('n', '<C-w>', ':BDelete this<CR>', opt)
+m('n', 'L', ':BufferLineMoveNext<Cr>', opt)
+m('n', 'H', ':BufferLineMovePrev<Cr>', opt)
+m('n', 'K', ':BufferLineCycleNext<Cr>', opt)
+m('n', 'J', ':BufferLineCyclePrev<Cr>', opt)
 
 -- Nvim Tree
-map('n', '<C-e>', ':NvimTreeToggle<CR>', opts)
+m('n', '<C-e>', ':NvimTreeToggle<CR>', opt)
 
 -- Window Navigation
-map('n', '<C-l>', '<C-w>l', opts)
-map('n', '<C-h>', '<C-w>h', opts)
-map('n', '<C-k>', '<C-w>k', opts)
-map('n', '<C-j>', '<C-w>k', opts)
+m('n', '<C-l>', '<C-w>l', opt)
+m('n', '<C-h>', '<C-w>h', opt)
+m('n', '<C-k>', '<C-w>k', opt)
+m('n', '<C-j>', '<C-w>k', opt)
 
 -- Move a block of code
-map('v', '<C-k>', ":m '<-2<CR>gv=gv", opts)
-map('v', '<C-j>', ":m '>+1<CR>gv=gv", opts)
+m('v', '<C-k>', ":m '<-2<CR>gv=gv", opt)
+m('v', '<C-j>', ":m '>+1<CR>gv=gv", opt)
 
 -- Telescope
-map('n', '<leader>ff', ':Telescope find_files<cr>', opts)
-map('n', '<leader>fg', ':Telescope live_grep<cr>', opts)
-map('n', '<leader>fb', ':Telescope buffers<cr>', opts)
-map('n', '<leader>fh', ':Telescope help_tags<cr> ', opts)
+m('n', '<leader>ff', ':Telescope find_files<cr>', opt)
+m('n', '<leader>fg', ':Telescope live_grep<cr>', opt)
+m('n', '<leader>fb', ':Telescope buffers<cr>', opt)
+m('n', '<leader>fh', ':Telescope help_tags<cr> ', opt)
 
 -- Lsp
-map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opts)
-map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-map('n', 'Z', 	':lua vim.lsp.buf.hover()<CR>', opts)
-map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opts)
-map('n', 'D', ':lua vim.lsp.buf.type_definition()<CR>', opts)
-map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>', opts)
-map('n', '<leader>ca', ':Telescope lsp_code_actions<CR>', opts)
-map('n', 'gr', ':Telescope lsp_references<CR>', opts)
-map('n', 'ge', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-map('n', '<leader>fm', ':lua vim.lsp.buf.formatting()<CR>', opts)
-
+m('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>', opt)
+m('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opt)
+m('n', 'Z', 	':lua vim.lsp.buf.hover()<CR>', opt)
+m('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>', opt)
+m('n', 'gt', ':lua vim.lsp.buf.type_definition()<CR>', opt)
+m('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>', opt)
+m('n', '<leader>ca', ':Telescope lsp_code_actions<CR>', opt)
+m('n', 'gr', ':Telescope lsp_references<CR>', opt)
+m('n', 'ge', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opt)
+m('n', '<leader>fm', ':lua vim.lsp.buf.formatting()<CR>', opt)
 
 -- Others
-map('n', '<leader><leader>', ':noh<CR>', opts)
-map('n', '<C-n>', ':Neogit kind=floating<CR>', opts)
-map('n', 'n', 'nzzzv', opts)
-map('n', 'N', 'Nzzzv', opts)
-map('n', '<leader>j', 'mzJ`z', opts)
+m('n', '<leader><leader>', ':noh<CR>', opt)
+m('n', '<C-n>', ':Neogit kind=floating<CR>', opt)
+m('n', 'n', 'nzzzv', opt)
+m('n', 'N', 'Nzzzv', opt)
+m('n', '<leader>j', 'mzJ`z', opt)
